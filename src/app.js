@@ -1,4 +1,3 @@
-
 const express = require('express');
 
 const app = express();
@@ -8,7 +7,8 @@ const environment = process.env.APP_ENV || 'development';
 app.get('/', (req, res) => {
   res.json({
     application: 'Secure Lab App',
-    version: '1.0.0',
+    version: '1.1.0',
+    specialization: 'Specialization Security Lab',
     environment
   });
 });
@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'UP' });
 });
+
 
 app.get('/api/info', (req, res) => {
   res.status(200).json({
